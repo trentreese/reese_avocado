@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from allauth.socialaccount.providers.oauth2.urls import default_urlpatterns
+from goodreads_auth.provider import GoodreadsProvider
 
 urlpatterns = [
 	path('home/', include('home.urls')),
+	#path('goodreads_auth/', include('goodreads_auth.urls')),
 	path('admin/', admin.site.urls),
 ]
