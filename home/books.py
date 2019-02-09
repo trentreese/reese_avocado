@@ -58,10 +58,17 @@ url_curl = 'https://www.goodreads.com/review/list/93087855.xml?key=' + client_ke
 r = requests.get(url_curl, headers=headers)
 
 e = ET.ElementTree(ET.fromstring(r.content))
+reading = []
 for elt in e.iter():
 	if elt.tag == "title":
-		print(elt.text)
+		title = elt.text
+	if elt.tag == "image_url":
+		author = elt.text
+	if elt.tag == "name":
+		image_url = elt.text
+		reading.append([title, author, image_url])
 
+print(reading)
 
 
 #user = gc.user(6111554)

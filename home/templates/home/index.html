@@ -1,0 +1,11 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+
+{% if latest_question_list %}
+    <ul>
+      <p>Books are available.</p>
+    </ul>
+{% else %}
+    <p>No Books are available.</p>
+{% endif %}
