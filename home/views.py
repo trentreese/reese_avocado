@@ -1,11 +1,11 @@
 from django.http import HttpResponse
 from django.template import loader
-
+from . import books
 
 def index(request):
-    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
     template = loader.get_template('home/index.html')
+    book_list = books.get_currentlyreading()
     context = {
-        'latest_question_list': 1,
+        'book_list': book_list
     }
     return HttpResponse(template.render(context, request))

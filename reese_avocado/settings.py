@@ -24,7 +24,7 @@ SECRET_KEY = '6q!u=2wc^fg6fm1c2-4^s%)95!f95=f@d(3v)tb_++6w)sz!og'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.trentreese.com','localhost','127.0.0.1']
 
 
 # Application definition

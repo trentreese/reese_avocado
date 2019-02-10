@@ -20,6 +20,7 @@ from goodreads_auth.provider import GoodreadsProvider
 
 urlpatterns = [
 	path('home/', include('home.urls')),
+    path('', include('home.urls')),
 	#path('goodreads_auth/', include('goodreads_auth.urls')),
-	path('admin/', admin.site.urls),
+	path('admin/', admin.site.urls)
 ]

@@ -1,11 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 {% load static %}
-
 <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
-
-{% if latest_question_list %}
-    <ul>
-      <p>Books are available.</p>
-    </ul>
-{% else %}
-    <p>No Books are available.</p>
-{% endif %}
+</head>
+<body>
+<div class="topcorner">
+	<p><strong>Trent Reese</strong></p>
+	<p><strong>Data Engineer at Pepper.com</strong></p>
+	<p><strong>Berlin, Germany</strong></p>
+</div>
+<div class="hr">
+<br />
+<hr />
+<br />
+</div>
+{% block content %}
+	{% for book in book_list %}
+		<div class="book_display">
+			<p>{{ book.0 }}, {{ book.1 }}</p>
+			<img src=" {{ book.2 }} " alt="Book Image">
+		</div>
+		<br />
+	{% endfor %}
+{% endblock %}
+</body>
