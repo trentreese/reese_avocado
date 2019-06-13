@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from allauth.socialaccount.providers.oauth2.urls import default_urlpatterns
-from goodreads_auth.provider import GoodreadsProvider
 
 urlpatterns = [
 	path('home/', include('home.urls')),
