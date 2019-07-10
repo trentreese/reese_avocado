@@ -5,13 +5,13 @@ import sys
 from urllib import parse
 import xml.etree.ElementTree as ET
 
-def get_currentlyreading():
+def get_currentlyreading(req_type):
 	client_key='KieVMozaGh1Vtjf95ymaw'
 	client_secret='kBQcjRMivcHAQKfJEYWfd6JjjExaUrPCfEfXwgy8FD4'
 	headers = {
 	    'Content-type': 'application/json',
 	}
-	url_curl = 'https://www.goodreads.com/review/list/93087855.xml?key=' + client_key + '&v=2&shelf=currently-reading&per_page=200&page=1'
+	url_curl = 'https://www.goodreads.com/review/list/93087855.xml?key=' + client_key + '&v=2&shelf=' + req_type + '&per_page=200&page=1'
 	r = requests.get(url_curl, headers=headers)
 	e = ET.ElementTree(ET.fromstring(r.content))
 	reading = []
