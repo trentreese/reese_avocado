@@ -6,7 +6,7 @@ from .forms import NameForm
 def index(request):
     template = loader.get_template('home/index.html')
     book_type = ""
-    some_var = request.POST.getlist('checks')
+    some_var = request.GET.getlist('checks')
     print(some_var)
     if some_var == "id_cr":
         # Checkbox was selected
@@ -14,7 +14,7 @@ def index(request):
     elif 'reading' in request.GET:
         book_type = "read"
     else:
-        book_type = ""
+        book_type = "currently-reading"
         
 
     book_list = books.get_currentlyreading(book_type)
