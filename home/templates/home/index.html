@@ -22,13 +22,11 @@
 			{% endfor %}
 		{% endblock %}
 		</div>
-<div class="checkboxes">
- <form action="" method="GET">
+ <form action="" method="POST">
 	  <div class="checkboxes">
-	    <label for="id_cr"><input type="checkbox" name="checks" id="id_cr" checked /> <span>Currently Reading</span></label>
-	    <label for="id_r"><input type="checkbox" name="checks" id="id_r" /> <span>Read</span></label>
+	    <label for="id_cr"><input type="radio" name="radios" id="id_cr" value="id_cr" checked/> <span>Currently Reading</span></label>
+	    <label for="id_r"><input type="radio" name="radios" id="id_r" value="id_r" /> <span>Read</span></label>
 	  </div>
-	<input type="submit" value="Submit">
+	<input type="submit" value="OK">
    </form>
- </div>
 </body>
