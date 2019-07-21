@@ -1,4 +1,4 @@
 from django import forms
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='form_checks', max_length=100)
+class form_r(forms.Form):
+    form_r = forms.CharField(label='form_radios', max_length=100)
