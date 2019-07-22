@@ -3,6 +3,8 @@
 <head>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'home/bootstrap.min.css' %}" />
+
 <link rel="shortcut icon" href="{%  static 'home/favicon.ico' %}">
 </head>
 <body>
@@ -15,9 +17,23 @@
 <br />
 <hr />
 </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
  <div class="book_display">
 		{% block content %}
 			{% for book in book_list %}
+					<div style="height:12px;"><br></div>
 					<p>{{ book.0 }}, {{ book.1 }}</p>
 					<img src=" {{ book.2 }} " alt="Book Image">
 			{% endfor %}
