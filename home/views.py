@@ -25,7 +25,7 @@ def index(request):
     context = {
         'book_list': book_list
     }
-    return HttpResponse(template.render(context, request, ))
+    return HttpResponse(template.render(context, request))
 
 def get_radios(request):
     # if this is a POST request we need to process the form data
@@ -42,4 +42,4 @@ def get_radios(request):
     else:
         form = form_r()
 
-    return render(request, 'home/name.html', {'form': form})
+    return render(request, 'name.html', {'form': form})
