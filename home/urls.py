@@ -4,6 +4,5 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-	path('', views.index, name='index'),
-	url('', views.get_radios, name='name')
+	path('', views.index, name='index')
 ]	

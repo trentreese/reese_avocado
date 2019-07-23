@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.views.generic.edit import FormView
 from . import books
 from .forms import form_r
 
@@ -26,20 +27,3 @@ def index(request):
         'book_list': book_list
     }
     return HttpResponse(template.render(context, request))
-
-def get_radios(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = form_r(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = form_r()
-
-    return render(request, 'name.html', {'form': form})
