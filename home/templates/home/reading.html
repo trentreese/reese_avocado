@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}"/>
+    <link rel="stylesheet" id="bootstrap-css" type="text/css" href="{% static 'home/bootstrap.min.css' %}"/>
+
+    <link rel="shortcut icon" href="{%  static 'home/favicon.ico' %}">
+</head>
+<body>
+<div class="topcorner">
+    <p><strong>Trent Reese</strong></p>
+    <p><strong>Data Engineer at Pepper</strong></p>
+    <p><strong>Berlin, Germany</strong></p>
+</div>
+<div>
+    <hr class="hr">
+</div>
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark border-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-home"></i>
+                    Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <!--      <li class="nav-item">-->
+            <!--        <a class="nav-link" href="#">-->
+            <!--          <i class="fa fa-envelope-o">-->
+            <!--          </i>-->
+            <!--          Contact-->
+            <!--        </a>-->
+            <!--      </li>-->
+    </div>
+</nav>
+
+<div>
+    <br>
+    <h3>Goodreads API</h3>
+</div>
+<div class="book_display">
+    {% block content %}
+    {% for book in book_list %}
+    <div style="height:12px;"><br></div>
+    <p>{{ book.0 }}, {{ book.1 }}</p>
+    <img src=" {{ book.2 }} " alt="Book Image">
+    {% endfor %}
+    {% endblock %}
+
+</div>
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+</body>
