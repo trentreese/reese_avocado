@@ -1,1 +1,1 @@
-# reese_avocado
+# home project for working with django/python
