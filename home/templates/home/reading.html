@@ -46,15 +46,26 @@
     <h3>Goodreads API</h3>
 </div>
 <div class="book_display">
-    {% block content %}
+
     {% for book in book_list %}
     <div style="height:12px;"><br></div>
     <p>{{ book.0 }}, {{ book.1 }}</p>
     <img src=" {{ book.2 }} " alt="Book Image">
     {% endfor %}
-    {% endblock %}
-
 </div>
+<div class="book_pagination">
+    {% if book_list.has_previous %}
+    <a href="?page=1&choice={{ choice }}">&laquo; </a>
+    <a href="?page={{ book_list.previous_page_number }}&choice={{ choice }}"> <- </a>
+    {% endif %}
+    Page {{ book_list.number }} of {{ book_list.paginator.num_pages }}
+
+    {% if book_list.has_next %}
+    <a href="?page={{ book_list.next_page_number }}&choice={{ choice }}"> -> </a>
+    <a href="?page={{ book_list.paginator.num_pages }}&choice={{ choice }}"> &raquo;</a>
+    {% endif %}
+</div>
+<div></div>
 <form action="/" method="post">
     {% csrf_token %}
     {{ form }}

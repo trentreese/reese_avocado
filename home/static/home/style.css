@@ -27,6 +27,19 @@ body {
   word-wrap: break-word;
 }
 
+.book_pagination{
+  clear:both;
+  font-size: 14px;
+  line-height: 1.5em;
+  border-width: 1px;
+  padding: 6px;
+  word-wrap: break-word;
+}
+
+.book_pagination a:link, .book_pagination a:visited, .book_pagination a:hover, .book_pagination a:active {
+  color: #aaa;
+}
+
 .checkboxes label {
   display: inline-block;
   padding-right: 10px;
