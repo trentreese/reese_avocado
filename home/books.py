@@ -1,10 +1,10 @@
 import requests
 import xml.etree.ElementTree as ET
-
+from .models import accounts
 
 def get_currentlyreading(req_type):
-    client_key = 'KieVMozaGh1Vtjf95ymaw'
-    client_secret = 'kBQcjRMivcHAQKfJEYWfd6JjjExaUrPCfEfXwgy8FD4'
+    good_reads_account = accounts.objects.get(name='goodreads')
+    client_key = good_reads_account.key
     headers = {'Content-type': 'application/json'}
     reading = []
     if req_type != "":
