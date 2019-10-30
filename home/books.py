@@ -11,12 +11,12 @@ def get_currentlyreading(req_type):
     if req_type != "":
         page = 1
         while page > 0:
-            url_curl = 'https://www.goodreads.com/review/list/93087855.xml?key=' + client_key + '&v=2&shelf=' + req_type + '&per_page=10&page=' + str(page)
+            url_curl = 'https://www.goodreads.com/review/list/93087855.xml?key=' + client_key + '&v=2&shelf=' + req_type + '&per_page=50&page=' + str(page)
             print(url_curl)
             r = requests.get(url_curl, headers=headers)
             reading = set_reading_list(r.content)
             if reading:
-                reading_final += reading
+                reading_final.extend(reading)
                 page += 1
             else:
                 page = 0
